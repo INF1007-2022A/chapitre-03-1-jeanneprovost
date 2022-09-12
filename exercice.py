@@ -5,15 +5,15 @@
 import math
 
 def square_root(a: float) -> float:
-    return 0.0
+    return math.sqrt(a)
 
 
 def square(a: float) -> float:
-    return 0.0
+    return a*a
 
 
 def average(a: float, b: float, c: float) -> float:
-    return 0.0
+    return (a+b+c)/3
 
 
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
@@ -21,7 +21,11 @@ def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float
 
 
 def to_degrees(angle_rads: float) -> tuple:
-    return 0.0, 0.0, 0.0
+    # Convertir en degrés, minutes, secondes un angle fourni au départ en radians
+    angle_deg = angle_rads*180/math.PI
+    minutes = (angle_deg - math.floor(angle_deg)) * 60
+    secondes = (minutes - math.floor(minutes)) * 60
+    return math.floor(angle_deg), minutes, secondes
 
 
 def to_celsius(temperature: float) -> float:
